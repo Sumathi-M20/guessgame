@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day 2</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1 style="background-color: #7fffd4;">Names</h1>
+    </div>
+    <div id="box">
+<h1 style="background-color: #CDA5F3; color: #000000;">Age</h1>
+    </div>
+       <script>
+
+      //   let a = [1,2,3,4,5];
+
+      // const b =  a.forEach((e) => console.log(e ** 2)
+      //    );
+      //    console.log("b===", b);
+
+      //    a.forEach((e) => {
+      //         if(e === 5){
+      //           console.log("5 is here!!!!!!!");
+                
+      //         }
+      //    })
+
+        //  let newArr=[5,8,6,10,3]
+        //  let a=0;
+
+        //  newArr.forEach((x)=>{
+        //   if(x%2==0)
+        //  {
+        //    a++;
+        //  }
+         
+        //  if(x%1==1)
+        //  {
+        //   console.log("odd number",x)
+        //  }
+  //        })
+  //        console.log("even number",a)
+
+  // let arr1 = [2,5,7,8,9,4];
+
+  //        for (const e of  arr1){
+  //            console.log(e);
+
+  //            if(e === 7){
+  //             break;
+  //            }
+  //        }
+
+
+        //  let name = "sumathi";
+        // let temp="";
+
+        //  for(const e of name){
+        //      console.log(e);
+        //     //  concate.push(e);
+        //      temp = e+temp;
+             
+        //  }
+        //  console.log("string===",concate)
+        // let result= concate.reverse().join('')
+        // console.log(temp)
+
+        // let profile = {
+        //   name : "tharani",
+        //   designation : "fullStackDev",
+        //   experience : "2years"
+        // }
+
+        // for(const user in profile){
+
+        //   console.log(profile[user]);
+        // }
+
+
+        let userProfile = [
+          {
+            name : "abi",
+            age : 12,
+            mark : [23,45,76,34]
+          },
+          {
+            name : "john",
+            age : 20
+          },
+          {
+            name : "jothi",
+            age : 23
+          }
+
+        ];
+
+
+        let ans1 = userProfile[0].mark[2];
+        console.log(ans1);
+        
+        let container = document.getElementById("container");
+        // let anotherMethod=""
+       for(const userName of userProfile){
+        const temp = document.createElement("h1");
+        temp.textContent=userName.name;
+        container.appendChild(temp);
+        document.getElementById("container").style.fontSize="10px"
+        const temp2=document.createElement("h1");
+        temp2.textContent=userName.age;
+        box.appendChild(temp2)
+        // anotherMethod+=`Name: ${userName.name}` 
+        // console.log(anotherMethod)
+        // document.body.innerHTML=anotherMethod;
+
+       }
+       for (const userAge in userProfile){
+        const age=userProfile[userAge].age;
+        console.log(age)
+       }
+
+
+       function counter(){
+
+        let count = 0;
+        
+       }
+
+
+       </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper scissors</title>
+</head>
+<body>
+  <script>
+const startGame=()=>{
+  let confirmEntry=confirm(`can we play rock paper scissors`);
+  confirmEntry?continueGame():alert(`Maybe next time buddy`);
+}
+const continueGame =()=>{
+  while(true)
+{
+let playerInput= getPlayerInput();
+playerInput = formatValue(playerInput);
+console.log(playerInput);
+if(playerInput=== "" )
+{
+  invalidChoice();
+}
+if(!playerInput)
+{
+  midQuit();
+  break;
+}
+playerInput= compareValue(playerInput);
+if(!playerInput){
+  invalidEntry();
+  continue;
+}
+const computerValue=getcomputerChoice();
+const result = decideWinner(playerInput,computerValue)
+console.log(result)
+gameResult(result);
+if(playAgain()){
+  continue;
+}
+else{
+  greetings();
+}
+}
+ 
+}
+const getcomputerChoice =()=>{
+  let computerValue = Math.floor(Math.random()*3);
+  const probArr=["rock","paper","scissors"]
+   computerValue=probArr[computerValue]
+  console.log(computerValue)
+  return computerValue;
+}
+const compareValue=(playerInput)=>{
+  if(playerInput==="rock"||
+     playerInput==="paper"||
+     playerInput==="scissors"
+  )
+  {
+    return playerInput;
+  }
+  else{
+    return false;
+  }
+
+}
+const playAgain=()=>
+{
+  return confirm(`can we have another game`)
+}
+const greetings =()=>
+{
+  alert(`thanks for playing lets meet again`)
+}
+const gameResult=(result)=>
+{
+  alert(result)
+}
+const decideWinner=(playerInputs,computerValues)=>{
+const winner=
+playerInputs===computerValues?`draw the match`
+:playerInputs==="rock"&& computerValues==="scissors"?`playerInput${playerInputs}\n computerValue:${computerValues}\n player won`
+:playerInputs==="paper" && compareValues==="rock"?`playerInput${playerInputs}\n computerValue:${computerValues}\n player won`
+:playerInputs=== "scissors" && compareValues==="paper" ?`playerInput${playerInputs}\n computerValue:${computerValues}\n player won`
+:`playerInput${playerInputs}\n computerValue:${computerValues}\n computer won`
+return winner;
+}
+const midQuit = ()=>{
+  alert(`Guess you dont want to countinue see you nxt time`)
+}
+const invalidChoice = ()=>
+{
+  alert(`you did't enter value`)
+}
+const formatValue=(playerInput)=>{
+  if(playerInput || playerInput==="")
+{
+  let final= playerInput.trim().toLowerCase();
+  console.log(final+'S');
+  return final;
+}
+else{
+  return false;
+}
+
+}
+const invalidEntry=()=>
+{
+  alert(`you entered wrong value`)
+}
+const getPlayerInput=()=>{
+  return prompt(`Please enter any of this \n rock,paper,scissors`);
+}
+startGame();
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(120, 14, 146);
+      color: white;
+    }
+    #staticbox{
+      height: 200px;
+      width: 200px;
+      background-image: url('../img/aesthr.jpg');
+      position: static;
+      top: 2px;
+      border: 5px solid rgb(253, 253, 253);
+    }
+    #relativbox{
+      height: 150px;
+      width: 150px;
+      background-image: url('../img/aesthr.jpg');
+      position: relative;
+      left: 20px;
+      top: 0px;
+      bottom: 20px;
+      border: 3px solid darkkhaki;
+      z-index: -1;
+    } /* position an element according to closest positioned ancestor*/
+    #absolutebox{
+      height: 100px;
+      width: 100px;
+      background-image: url('../img/900w-fw3-3A3krDc.webp');
+      position: absolute;
+  
+      top: 30px;
+      bottom: 70px;
+      
+      z-index: 0;
+    }
+    h1{
+      position: sticky;
+      top: 0px;
+      border: 2px solid black;
+      background-color: yellow;
+      color: black;
+      text-align: center;
+      z-index: 1;
+     
+    }
+    p{
+      border : 3px black double;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is sticky note</h1>
+  <div id="staticbox">
+    this div is static
+  </div>
+  <div id="relativbox">
+    this is relative
+    <div id="absolutebox">
+      this is absolute
+    </div>
+  </div>
+ 
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem atque quis nostrum recusandae quos id minima voluptates illo tempora saepe laboriosam harum officia sint similique, quia fuga ipsam? Suscipit dolores quam in, nesciunt illo molestias nostrum eaque a autem dolor magnam optio rerum saepe modi eos explicabo? Dignissimos, culpa accusantium.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, maxime dolor. Maxime, repellendus totam deleniti beatae eligendi dolores voluptas, est, eos obcaecati harum aspernatur qui blanditiis tempora quo. Sed quae ipsam, rem iure dolore quisquam sit molestias fuga impedit quia doloribus quis saepe dignissimos deleniti. Harum ratione asperiores doloremque ex.</p>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias neque ut earum et ullam, accusamus nam numquam aliquam quam voluptatibus! Dolore debitis non, quo perferendis, distinctio laboriosam tempora repellat iure dolorem quaerat quas illo? Voluptates accusamus dignissimos perspiciatis, sequi, delectus quasi doloremque optio quae exercitationem rem magnam eum in, sapiente harum vitae ullam voluptate! Nostrum, voluptates esse? Commodi, esse rerum.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint debitis corporis cumque modi, eos ea. Nihil vero cumque maxime iste obcaecati magnam est eum, veritatis illum quas impedit libero soluta quibusdam accusamus similique rem. Quis repellat ullam mollitia velit perferendis soluta incidunt voluptatem natus, aut delectus quia qui placeat, perspiciatis nostrum atque voluptatum at tempore adipisci deleniti saepe repudiandae. Eaque quaerat corrupti sed deleniti laudantium facilis esse soluta facere ab ut reiciendis omnis, odit eveniet alias ullam sint voluptates adipisci fuga veniam saepe nam? Ipsam quam impedit incidunt veritatis doloribus sapiente, veniam dignissimos quo, quasi ipsum placeat, cupiditate laudantium quod?</p>
+
+  <!-- Relative - the element is positioned relative to its normal position. 
+   Absolute - the element is positioned absolutely to its first positioned parent. 
+   Fixed - the element is positioned related to the browser window.
+    Sticky - the element is positioned based on the user's scroll position. -->
+</body>
+</html>

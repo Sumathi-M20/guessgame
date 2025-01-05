@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   let playerentry=confirm(`can we play Rock,Paper,Scissors`)
+   if(playerentry)
+   {
+    let playerInput=prompt(`please enter Rock paper scissors`);
+    if(playerInput)
+    {
+      let playerValue=playerInput.trim().toLowerCase();
+      console.log(playerValue);
+      if (playerValue==="rock"||
+        playerValue==="paper"||
+        playerValue==="scissors"
+      )
+      {
+        const computer=Math.floor(Math.random()*3);
+        console.log(computer);
+        const gameArray=["rock","paper","scissors"];
+        const computerValue=gameArray[computer]
+        console.log(computerValue);
+
+        let result= computerValue===playerValue?`draw match`
+                    :computerValue===`rock`&& playerValue===`scissors`?`computerValue:${computerValue}\n playerValue:${playerValue}\n Computer won <3`
+                    :computerValue===`paper`&& playerValue===`rock`?`computerValue:${computerValue}\n playerValue:${playerValue}\n Computer won <3`
+                    :`playerValue:${playerValue}\n computerValue:${computerValue}\n Player wins`
+                    alert(result);
+          let playagain=confirm(`wish to play again`)
+          if(playagain){
+            location.reload()
+          }
+          else{
+            alert("thanks for playing")
+          }
+      }
+      else {
+        alert(`please enter right value`)
+      }
+    }
+    else{
+      location.reload()
+
+    }
+    
+   }
+  //  else{
+  //  alert(`we can see next time`);
+  //  }
+
+  //  let i=0;
+  //  while(i<=10)
+  //  {
+   
+  //   console.log(i);
+  //   i++;
+    
+  //  }
+
+  //  const firstIndexcaps = (name) =>{
+  //   return name.charAt(0).toUpperCase()+name.slice(1).toLowerCase();
+  //  }
+
+  //  console.log(firstIndexcaps("manju"));
+  </script>
+</body>
+</html>

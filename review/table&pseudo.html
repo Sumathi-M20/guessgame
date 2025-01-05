@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table{
+    border: 3px solid brown;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    width: 450px;
+    padding: 5px;
+  }
+  th{
+    border: 3px solid brown;
+    text-transform: uppercase;
+    background-color: magenta;
+    color: white;
+  }
+tr,td{
+  border: 3px solid brown;
+}
+tr:nth-child(odd){
+  background-color: rgb(42, 207, 207);
+}
+tr:nth-child(even)
+{
+  background-color: #30cf2a;
+}
+tr:hover{
+  /* background-color: hsl(342, 66%, 49%); */
+  opacity: 0.5;
+}
+th::first-letter{
+  font-size: 20px;
+}
+/* td::first-line{
+  background-color: aqua;
+  font-size: 20px;
+} */
+ a:visited{
+  color: #e22b2b;
+ }
+ h1{
+  text-align: center;
+ }
+ /* h1::after {
+   content: "hello";
+  } */
+
+</style>
+<body>
+  <h1>Person Details</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>City</th>
+    </tr>
+    <tr>
+      <td>Sumathi</td>
+      <td>24</td>
+      <td>chennai</td>
+    </tr>
+    <tr>
+      <td>Manju</td>
+      <td>25</td>
+      <td>banglore</td>
+    </tr>
+    <tr>
+      <td>gopi</td>
+      <td>29</td>
+      <td>hydrabad</td>
+    </tr>
+    <tr>
+      <td>Manju</td>
+      <td>25</td>
+      <td><a href="https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block" target="_blank">banglore </a></td>
+    </tr>
+    
+  </table>
+  
+   
+  
+</body>
+
+</html>

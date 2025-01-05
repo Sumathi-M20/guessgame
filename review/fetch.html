@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Document</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+}
+
+#container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.listitem {
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #caf0f8;
+  color: #023e8a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.listitem:hover {
+  transform: scale(1.05);
+}
+
+button {
+  display: block;
+  margin: 5% auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0077b6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005f8a;
+}
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <button onclick="apicall()">Click here to show data</button>
+  </div>
+  
+  <main id="container" >
+    
+</main>
+  <script>
+    // console.log(fetch("https://jsonplaceholder.typicode.com/posts"));
+    
+    // API Call Function
+    function apicall(){
+      fetch("https://jsonplaceholder.typicode.com/posts")
+
+    .then((resolve)=>resolve.json()) 
+    .then((msg)=>{
+      
+      const container=document.getElementById('container')
+     // Loop through msg and display each item using map
+       msg.map((mapData)=>{
+        
+        const lisitem=document.createElement('div');
+        console.log(lisitem)
+        lisitem.className= "listitem" ; //for styling purpose
+        lisitem.innerHTML=`
+        <h3>ID:${mapData.id}</h3>
+        <p><b> \nTitle:</b>${mapData.title}<p>
+          
+         <b> \nBody:</b>${mapData.body}`
+        // // div.style.backgroundColor = "#f789f9";
+        container.appendChild(lisitem) 
+     })
+    
+    })
+    .catch((error)=>console.log(error));
+  }
+  
+    
+
+
+    
+  </script>
+</body>
+</html>

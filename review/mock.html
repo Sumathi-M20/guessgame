@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+// let myArr=[2,4,6,3,9,8]
+// const finalValue =myArr.map(x=>{
+//    if(x>4) 
+// {
+//   console.log(x)
+// }
+
+// }
+// )
+// let newval = finalValue.map(x=> x)
+// const myFilterValue=myArr.filter((x)=>x<4);
+// console.log(myFilterValue)
+
+
+//min and max value find without min max method
+//palindrome or not using map or filter
+
+let myStringArr=["Sumathi","i am human","malayalam","racecar"]
+let ispalindrom=[]
+let isnotpalindrom=[]
+const findPalindrom = myStringArr.map(str=>{
+  let reversed= str.split('').reverse().join('')
+  console.log(reversed)
+  if(str===reversed)
+{
+  console.log("this is palindorm :" +str);
+  ispalindrom.push(str)
+  
+}
+else{
+  console.log("this is not a palindorm :"+str);
+  isnotpalindrom.push(str)
+}
+})
+console.log(ispalindrom)
+console.log(isnotpalindrom)
+
+const result=myStringArr.filter(str=>str.split('').reverse().join('')==str)
+console.log(result);
+
+
+//finding min max
+// let numArr=[1,5,8,3,7,10,50]
+// numArr.sort((num1,num2)=>num1-num2);
+// console.log(numArr[0])
+// const result2=numArr.sort((num1,num2)=>num2-num1);
+// console.log("result2====", result2);
+
+// console.log(numArr[0])
+
+let numArr=[9,5,8,3,7,10,50];
+let min = numArr[0];
+let max = numArr[0];
+   
+for(let i=0; i<=numArr.length; i++){
+    
+   
+
+   if(min > numArr[i]){
+     min = numArr[i];
+   }
+
+
+   if(max < numArr[i]){
+    max = numArr[i];
+   }
+}
+
+console.log("min====", min);
+console.log("max=====", max);
+
+
+
+
+
+
+
+
+</script>
+</html>

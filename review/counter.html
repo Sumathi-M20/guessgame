@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="plus" onclick="c1.increment()">increase</button>
+  <h1 id="showvalue"></h1>
+  <button id="minus" onclick="c1.decrease()">decrease</button>
+
+<script>
+
+
+  function counter(){
+   
+    let count = 0;
+    
+      function increment(){
+      count++;
+     
+      // return count;
+      console.log(count);  
+      document.getElementById("showvalue").innerText=count;
+     }
+     function decrease(){
+      count--;
+     }
+     
+     function reset(){
+      count=0;
+     }
+  return {increment,decrease,reset}
+    }
+     
+  
+ const c1 =   counter();
+ 
+c1.increment();
+c1.increment(5);
+c1.increment();
+ 
+
+</script>
+</body>
+</html>

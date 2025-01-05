@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <body>
+      <div id="mycontainer">
+
+      </div>
+      <script>
+
+        const travelers = [
+  {
+    name: "Alice",
+    age: 29,
+    destinations: ["Amazon Forest", "Great Barrier Reef", "Sahara Desert"],
+    transportation: "Bicycle"
+  },
+  {
+    name: "Bob",
+    age: 34,
+    destinations: ["Grand Canyon", "Black Forest", "Himalayas"],
+    transportation: "Car"
+  },
+  {
+    name: "Charlie",
+    age: 22,
+    destinations: ["Yellowstone", "Rocky Mountains"],
+    transportation: "Motorcycle"
+  },
+  {
+    name: "Diana",
+    age: 30,
+    destinations: ["Arctic Circle", "Amazon Forest", "Serengeti"],
+    transportation: "Electric Scooter"
+  }
+];
+//setp:1 filtering traveler list from given data
+const filteredTravelerList = travelers.filter(traveler => 
+  traveler.destinations.some(traveller=>traveller.toLocaleLowerCase().includes("forest"))
+);
+console.log(filteredTravelerList);
+
+//destructuring filtered data using map
+const result1=filteredTravelerList.map(({name,transportation})=>`Traveler: ${name} , Preferred Transportation: ${transportation}`)
+ console.log(result1);
+
+//to show UI screen using for each
+ const mycontainer=document.getElementById('mycontainer');
+ result1.forEach(ets=>{
+ const temp2=document.createElement("h3");
+ temp2.textContent= ets;
+ mycontainer.appendChild(temp2)
+ })
+
+ //to show UI using for of 
+//  for(let trvlerlist of filteredTravelerList){
+//   const tempval=document.createElement('h1');
+//   tempval.textContent=trvlerlist.name;
+//   console.log(trvlerlist)
+//   mycontainer.appendChild(tempval)
+//   const tmpval2 =document.createElement("li")
+//   tmpval2.textContent=trvlerlist.transportation;
+//   mycontainer.appendChild(tmpval2)
+//  }
+
+
+
+
+
+
+      </script>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+</head>
+<body>
+  <div>
+    <span id="Hour">00</span>:<span id="Min">00</span>:<span id="Sec">00</span>
+  </div>
+  <button onclick="startTime()">Start</button>
+  <button onclick="stopTime()">Stop</button>
+
+  <script>
+    let clockStart; // To hold the interval ID
+
+    function startTime() {
+      // Prevent multiple intervals from being created
+      if (clockStart) return;
+
+      // Start updating the clock every second
+      clockStart = setInterval(changeTime, 1000);
+      changeTime(); // Update immediately without waiting for 1 second
+    }
+
+    function stopTime() {
+      clearInterval(clockStart); // Stop the interval
+      clockStart = null; // Reset the interval ID to allow restarting
+    }
+
+    function changeTime() {
+      // Fetch DOM elements
+      const Hour = document.getElementById("Hour");
+      const Min = document.getElementById("Min");
+      const Sec = document.getElementById("Sec");
+
+      // Get the current time
+      const currentTime = new Date();
+      const hours = currentTime.getHours();
+      const minutes = currentTime.getMinutes();
+      const seconds = currentTime.getSeconds();
+
+      // Update the time in the HTML elements
+      Hour.innerHTML = hours < 10 ? "0" + hours : hours;
+      Min.innerHTML = minutes < 10 ? "0" + minutes : minutes;
+      Sec.innerHTML = seconds < 10 ? "0" + seconds : seconds;
+    }
+  </script>
+</body>
+</html>

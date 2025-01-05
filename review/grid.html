@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .gridprop{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: 150px 150px auto;
+    gap: 15px;
+    /* row-gap: 20px;
+    column-gap: 20px;  */
+    border: 2px black solid;
+  }
+  .one{
+
+    grid-row: span 3;
+  }
+</style>
+<body>
+  <div class="gridprop">
+    <p style="background-color: red;" class="one"></p> ipsum, dolor sit amet consectetur adipisicing elit. Dolorum voluptate inventore quia recusandae. Culpa quam, voluptatem aspernatur temporibus reprehenderit cumque.</p>
+    <p style="background-color: rgb(31, 82, 127);" class="two">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, aperiam consequuntur vel sequi dolores nulla? Soluta, error. Facere, debitis eos?</p>
+    <p style="background-color: blueviolet;" class="three">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis soluta quibusdam eaque iusto velit eius? Maxime et impedit perferendis sequi.</p>
+    <p style="background-color: magenta;" class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem magni repellendus similique dolores sunt doloremque accusamus nobis cum ex!
+    </p>
+    <p style="background-color: brown;" class="five">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolores provident error incidunt rerum culpa ad omnis beatae obcaecati consequatur.</p>
+    <p style="background-color: cadetblue;" class="six">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolores provident error incidunt rerum culpa ad omnis beatae obcaecati consequatur.</p>
+    <p style="background-color: burlywood;" class="seven">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolores provident error incidunt rerum culpa ad omnis beatae obcaecati consequatur.</p>
+    <p style="background-color: magenta;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem magni repellendus similique dolores sunt doloremque accusamus nobis cum ex!
+    </p>
+    <p style="background-color: aliceblue;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum voluptate inventore quia recusandae. Culpa quam, voluptatem aspernatur temporibus reprehenderit cumque.</p>
+  </div>
+</body>
+</html>

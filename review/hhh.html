@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Input Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #007BFF;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .form-group input:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .output {
+      margin-top: 20px;
+      background: #e9ecef;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .output p {
+      margin: 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Enter User Data</h2>
+    <div class="form-group">
+      <label for="userid"><strong>USER ID:</strong></label>
+      <input id="userid" type="number" placeholder="Enter your user ID" />
+    </div>
+    <div class="form-group">
+      <label for="title"><strong>TITLE:</strong></label>
+      <input id="title" type="text" placeholder="Enter title" />
+    </div>
+    <div class="form-group">
+      <label for="body"><strong>BODY:</strong></label>
+      <input id="body" type="text" placeholder="Enter body" />
+    </div>
+    <button id="submit" onclick="getInputValue()">Submit</button>
+    <div id="output" class="output"></div>
+  </div>
+
+  <script>
+    let user = []; // Changed to an array to hold multiple user objects
+
+    function getInputValue() {
+      const title = document.getElementById('title').value;
+      const body = document.getElementById('body').value;
+      const userId = document.getElementById('userid').value;
+
+      // Validate inputs
+      if (!userId || !title || !body) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      // Create a new user object
+      const newUser = {
+        userId: parseInt(userId),
+        title: title,
+        body: body,
+      };
+
+      // Add the new user object to the array
+      user.push(newUser);
+
+      // Update the output
+      updateOutput();
+
+      // Clear the input fields
+      document.getElementById('userid').value = '';
+      document.getElementById('title').value = '';
+      document.getElementById('body').value = '';
+    }
+
+    function updateOutput() {
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = ''; // Clear previous output
+
+      user.forEach((u, index) => {
+        const userDiv = document.createElement('p');
+        userDiv.innerHTML = `<strong>User ${index + 1}</strong>: UserID: ${u.userId}, Title: ${u.title}, Body: ${u.body}`;
+        outputDiv.appendChild(userDiv);
+      });
+    }
+  </script>
+</body>
+</html>
